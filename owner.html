@@ -18,7 +18,7 @@
         </a>
 
         <h1>معرض الهوية البصرية</h1>
-        <p class="dashboard-msg">استعرض شعارات المشروع بكافة صيغها الاحترافية. جميع الأزرار توجهك إلى المجلد السحابي الآمن للتحميل.</p>
+        <p class="dashboard-msg">استعرض شعارات المشروع بكافة صيغها الاحترافية. استخدم الأزرار الجانبية أو السحب للتنقل.</p>
         
         <a href="https://drive.proton.me/urls/YYRXRBAQX0#__fHTqx-NeRs" target="_blank" class="btn btn-golden" style="margin-bottom: 2rem;">📥 تحميل الحزمة الكاملة (All-in-One)</a>
 
@@ -27,57 +27,41 @@
             <button class="view-btn active" id="btnSwipe" onclick="setView('swipe')">سحب 👆</button>
         </div>
 
-        <div class="logo-container swipe-mode" id="galleryContainer">
+        <div class="gallery-wrapper">
+            <button class="nav-btn prev" id="btnPrev" onclick="scrollGallery('right')">❯</button>
             
-            <div class="logo-card">
-                <div class="logo-img-box">
-                    <img src="images/logo-preview (2).png" alt="عمودي سطرين">
+            <div class="logo-container swipe-mode" id="galleryContainer">
+                <div class="logo-card">
+                    <div class="logo-img-box"><img src="images/logo-preview (2).png" alt="عمودي سطرين"></div>
+                    <a href="https://drive.proton.me/urls/99AMR9K4WM#TZuF1lPpvPN8" target="_blank" class="btn btn-purple">عمودي مع اسم (سطرين)</a>
                 </div>
-                <a href="https://drive.proton.me/urls/99AMR9K4WM#TZuF1lPpvPN8" target="_blank" class="btn btn-purple">عمودي مع اسم (سطرين)</a>
+                <div class="logo-card">
+                    <div class="logo-img-box"><img src="images/logo-preview (3).png" alt="عمودي سطر واحد"></div>
+                    <a href="https://drive.proton.me/urls/91RXM5PB38#WneDZXRsHbFV" target="_blank" class="btn btn-purple">عمودي مع اسم (سطر واحد)</a>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-img-box"><img src="images/logo-preview (6).png" alt="عمودي مقوس"></div>
+                    <a href="https://drive.proton.me/urls/60KF4DCA00#aUmZ9vuspVb2" target="_blank" class="btn btn-purple">عمودي مع اسم مقوس</a>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-img-box"><img src="images/logo-preview (5).png" alt="أفقي سطر واحد"></div>
+                    <a href="https://drive.proton.me/urls/PQMB0D1VDC#L8Q8sknO6bwM" target="_blank" class="btn btn-purple">أفقي (سطر واحد)</a>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-img-box"><img src="images/logo-preview (4).png" alt="أفقي سطرين"></div>
+                    <a href="https://drive.proton.me/urls/0DVDPZ5PKW#UpDnxZw1lUeR" target="_blank" class="btn btn-purple">أفقي (سطرين)</a>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-img-box"><img src="images/logo-preview (7).png" alt="شعار دائري"></div>
+                    <a href="https://drive.proton.me/urls/15PD0VT8P0#Hl2q6lnFeFlK" target="_blank" class="btn btn-purple">لوغو دائري (ختم)</a>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-img-box"><img src="images/logo-preview (1).png" alt="الرمز فقط"></div>
+                    <a href="https://drive.proton.me/urls/FK7HHN157G#TPbV2udOumhy" target="_blank" class="btn btn-purple">الرمز فقط (بدون اسم)</a>
+                </div>
             </div>
 
-            <div class="logo-card">
-                <div class="logo-img-box">
-                    <img src="images/logo-preview (3).png" alt="عمودي سطر واحد">
-                </div>
-                <a href="https://drive.proton.me/urls/91RXM5PB38#WneDZXRsHbFV" target="_blank" class="btn btn-purple">عمودي مع اسم (سطر واحد)</a>
-            </div>
-
-            <div class="logo-card">
-                <div class="logo-img-box">
-                    <img src="images/logo-preview (6).png" alt="عمودي مقوس">
-                </div>
-                <a href="https://drive.proton.me/urls/60KF4DCA00#aUmZ9vuspVb2" target="_blank" class="btn btn-purple">عمودي مع اسم مقوس</a>
-            </div>
-
-            <div class="logo-card">
-                <div class="logo-img-box">
-                    <img src="images/logo-preview (5).png" alt="أفقي سطر واحد">
-                </div>
-                <a href="https://drive.proton.me/urls/PQMB0D1VDC#L8Q8sknO6bwM" target="_blank" class="btn btn-purple">أفقي (سطر واحد)</a>
-            </div>
-
-            <div class="logo-card">
-                <div class="logo-img-box">
-                    <img src="images/logo-preview (4).png" alt="أفقي سطرين">
-                </div>
-                <a href="https://drive.proton.me/urls/0DVDPZ5PKW#UpDnxZw1lUeR" target="_blank" class="btn btn-purple">أفقي (سطرين)</a>
-            </div>
-
-            <div class="logo-card">
-                <div class="logo-img-box">
-                    <img src="images/logo-preview (7).png" alt="شعار دائري">
-                </div>
-                <a href="https://drive.proton.me/urls/15PD0VT8P0#Hl2q6lnFeFlK" target="_blank" class="btn btn-purple">لوغو دائري (ختم)</a>
-            </div>
-
-            <div class="logo-card">
-                <div class="logo-img-box">
-                    <img src="images/logo-preview (1).png" alt="الرمز فقط">
-                </div>
-                <a href="https://drive.proton.me/urls/FK7HHN157G#TPbV2udOumhy" target="_blank" class="btn btn-purple">الرمز فقط (بدون اسم)</a>
-            </div>
-
+            <button class="nav-btn next" id="btnNext" onclick="scrollGallery('left')">❮</button>
         </div>
     </div>
 
@@ -86,17 +70,28 @@
             const container = document.getElementById('galleryContainer');
             const btnGrid = document.getElementById('btnGrid');
             const btnSwipe = document.getElementById('btnSwipe');
+            const navButtons = document.querySelectorAll('.nav-btn');
 
             if (mode === 'swipe') {
-                container.classList.remove('grid-mode');
-                container.classList.add('swipe-mode');
+                container.className = 'logo-container swipe-mode';
                 btnSwipe.classList.add('active');
                 btnGrid.classList.remove('active');
+                navButtons.forEach(b => b.style.display = 'flex');
             } else {
-                container.classList.remove('swipe-mode');
-                container.classList.add('grid-mode');
+                container.className = 'logo-container grid-mode';
                 btnGrid.classList.add('active');
                 btnSwipe.classList.remove('active');
+                navButtons.forEach(b => b.style.display = 'none');
+            }
+        }
+
+        function scrollGallery(direction) {
+            const container = document.getElementById('galleryContainer');
+            const scrollAmount = container.clientWidth * 0.8;
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             }
         }
     </script>
