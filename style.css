@@ -168,5 +168,5 @@ body {
 .card-content p { font-size: 1.1rem; margin-bottom: 20px; color: var(--dark-grey); font-weight: 600; }
 .card-content .btn { width: 100%; margin: 0; }
 
-.bg-template { background-image: url('../images/template-preview.png'); background-position: bottom center; }
-.bg-font { background-image: url('../images/font-preview.png'); background-position: center; }
+.bg-template { background-image: url('images/template-preview.png'); background-position: bottom center; }
+.bg-font { background-image: url('images/font-preview.png'); background-position: center; }
