@@ -27,8 +27,8 @@
             <button class="view-btn active" id="btnSwipe" onclick="setView('swipe')">سحب 👆</button>
         </div>
 
-        <div class="gallery-wrapper">
-            <button class="nav-btn prev" id="btnPrev" onclick="scrollGallery('right')">❯</button>
+        <div class="gallery-wrapper" id="galleryWrapper">
+            <button class="nav-btn prev" onclick="scrollGallery(1)">❯</button>
             
             <div class="logo-container swipe-mode" id="galleryContainer">
                 <div class="logo-card">
@@ -61,38 +61,34 @@
                 </div>
             </div>
 
-            <button class="nav-btn next" id="btnNext" onclick="scrollGallery('left')">❮</button>
+            <button class="nav-btn next" onclick="scrollGallery(-1)">❮</button>
         </div>
     </div>
 
     <script>
         function setView(mode) {
             const container = document.getElementById('galleryContainer');
+            const wrapper = document.getElementById('galleryWrapper');
             const btnGrid = document.getElementById('btnGrid');
             const btnSwipe = document.getElementById('btnSwipe');
-            const navButtons = document.querySelectorAll('.nav-btn');
 
             if (mode === 'swipe') {
                 container.className = 'logo-container swipe-mode';
                 btnSwipe.classList.add('active');
                 btnGrid.classList.remove('active');
-                navButtons.forEach(b => b.style.display = 'flex');
+                wrapper.classList.remove('grid-active');
             } else {
                 container.className = 'logo-container grid-mode';
                 btnGrid.classList.add('active');
                 btnSwipe.classList.remove('active');
-                navButtons.forEach(b => b.style.display = 'none');
+                wrapper.classList.add('grid-active');
             }
         }
 
         function scrollGallery(direction) {
             const container = document.getElementById('galleryContainer');
-            const scrollAmount = container.clientWidth * 0.8;
-            if (direction === 'left') {
-                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            } else {
-                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
+            const scrollAmount = container.clientWidth * 0.8 * direction;
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
     </script>
 </body>
