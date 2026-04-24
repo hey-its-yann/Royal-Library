@@ -87,6 +87,7 @@
 
         function scrollGallery(direction) {
             const container = document.getElementById('galleryContainer');
+            // الاتجاه (1) لليمين، و (-1) لليسار
             const scrollAmount = container.clientWidth * 0.8 * direction;
             container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
