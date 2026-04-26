@@ -6,12 +6,99 @@
     <title>لوحة تحكم المالك</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* تنسيقات قسم الألوان */
+        .palette-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #eaeaea;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .color-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            transition: transform 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* مربع اللون نفسه */
+        .color-swatch {
+            height: 120px;
+            width: 100%;
+        }
+
+        /* تفاصيل الألوان وأزرار النسخ */
+        .color-details {
+            padding: 1.5rem;
+        }
+
+        .color-details h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .code-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            font-family: monospace; /* خط مناسب للأكواد */
+            font-size: 1rem;
+            direction: ltr; /* جعل الأكواد من اليسار لليمين */
+        }
+
+        .code-row span {
+            color: #555;
+            font-weight: bold;
+        }
+
+        .copy-btn {
+            background: #eaeaea;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #d4d4d4;
+        }
+
+        /* تنسيق الزر عند نجاح النسخ */
+        .copy-btn.copied {
+            background: #4caf50;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="dashboard owner-theme">
         
         <a href="index.html" class="top-back-btn">
-            <svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                 <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
             </svg>
             الرئيسية
@@ -63,9 +150,79 @@
 
             <button class="nav-btn next" onclick="scrollGallery(-1)">❯</button>
         </div>
-    </div>
+
+        <div class="palette-section">
+            <h2>لوحة الألوان الرسمية</h2>
+            <p class="dashboard-msg">انسخ أكواد الألوان لاستخدامها في التصاميم أو الويب بنقرة واحدة.</p>
+            
+            <div class="palette-grid">
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #563777;"></div>
+                    <div class="color-details">
+                        <h3>Purple</h3>
+                        <div class="code-row">
+                            <span>HEX: #563777</span>
+                            <button class="copy-btn" onclick="copyColorCode('#563777', this)">نسخ</button>
+                        </div>
+                        <div class="code-row">
+                            <span>RGB: 86, 55, 119</span>
+                            <button class="copy-btn" onclick="copyColorCode('rgb(86, 55, 119)', this)">نسخ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #E8A03F;"></div>
+                    <div class="color-details">
+                        <h3>Golden</h3>
+                        <div class="code-row">
+                            <span>HEX: #E8A03F</span>
+                            <button class="copy-btn" onclick="copyColorCode('#E8A03F', this)">نسخ</button>
+                        </div>
+                        <div class="code-row">
+                            <span>RGB: 232, 160, 63</span>
+                            <button class="copy-btn" onclick="copyColorCode('rgb(232, 160, 63)', this)">نسخ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #F2F2F2; border-bottom: 1px solid #eaeaea;"></div>
+                    <div class="color-details">
+                        <h3>Off-White</h3>
+                        <div class="code-row">
+                            <span>HEX: #F2F2F2</span>
+                            <button class="copy-btn" onclick="copyColorCode('#F2F2F2', this)">نسخ</button>
+                        </div>
+                        <div class="code-row">
+                            <span>RGB: 242, 242, 242</span>
+                            <button class="copy-btn" onclick="copyColorCode('rgb(242, 242, 242)', this)">نسخ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #1A1A1A;"></div>
+                    <div class="color-details">
+                        <h3>Dark Grey</h3>
+                        <div class="code-row">
+                            <span>HEX: #1A1A1A</span>
+                            <button class="copy-btn" onclick="copyColorCode('#1A1A1A', this)">نسخ</button>
+                        </div>
+                        <div class="code-row">
+                            <span>RGB: 26, 26, 26</span>
+                            <button class="copy-btn" onclick="copyColorCode('rgb(26, 26, 26)', this)">نسخ</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
 
     <script>
+        // دالة تغيير طريقة العرض (الشبكة أو السحب)
         function setView(mode) {
             const container = document.getElementById('galleryContainer');
             const wrapper = document.getElementById('galleryWrapper');
@@ -85,11 +242,36 @@
             }
         }
 
+        // دالة التمرير الجانبي للشعارات
         function scrollGallery(direction) {
             const container = document.getElementById('galleryContainer');
             // الاتجاه (1) لليمين، و (-1) لليسار
             const scrollAmount = container.clientWidth * 0.8 * direction;
             container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // الدالة الجديدة الخاصة بنسخ كود اللون
+        // =========================================
+        function copyColorCode(textToCopy, buttonElement) {
+            // استخدام واجهة الحافظة (Clipboard API) لنسخ النص
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // حفظ النص الأصلي للزر
+                const originalText = buttonElement.innerText;
+                
+                // تغيير شكل ونص الزر لتأكيد النسخ
+                buttonElement.innerText = 'تم النسخ!';
+                buttonElement.classList.add('copied');
+                
+                // إعادة الزر لشكله الأصلي بعد ثانيتين
+                setTimeout(() => {
+                    buttonElement.innerText = originalText;
+                    buttonElement.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('فشل في نسخ النص: ', err);
+                alert('عذراً، حدث خطأ أثناء النسخ.');
+            });
         }
     </script>
 </body>
